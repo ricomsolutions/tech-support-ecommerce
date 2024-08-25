@@ -1,0 +1,40 @@
+.expertise-area-section {
+  text-align: center;
+  padding: 50px;
+}
+
+.expertise-area-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.expertise-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.expertise-item {
+  width: 200px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #f7f8fa;
+  transition: background-color 0.3s ease;
+}
+
+.expertise-item:hover {
+  background-color: #e7f2f5;
+}
+
+.expertise-icon {
+  font-size: 2.5rem;
+  color: #00c1a5;
+  margin-bottom: 20px;
+}
+
+.expertise-item p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

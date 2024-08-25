@@ -1,0 +1,34 @@
+.hero-technician-section {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  background-color: #f4f8fb;
+}
+
+.hero-technician-content {
+  flex: 1;
+}
+
+.hero-technician-content h2 {
+  color: #1e2761;
+}
+
+.hero-technician-content h1 {
+  font-size: 2.5rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.hero-technician-content p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.hero-technician-image {
+  flex: 1;
+}
+
+.hero-technician-image img {
+  width: 100%;
+  height: auto;
+}

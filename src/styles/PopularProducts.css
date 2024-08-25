@@ -1,0 +1,57 @@
+/* src/styles/PopularProducts.css */
+.popular-products {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+.popular-products h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #1e2761;
+}
+
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 300px;
+  flex: 1;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.product-name {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 10px;
+}
+
+.buy-now-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #408ec6;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buy-now-button:hover {
+  background-color: #7a2048;
+}

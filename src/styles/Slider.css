@@ -1,0 +1,70 @@
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+}
+
+.slider-container .swiper-container {
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 95vh;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.text-container h2,
+.text-container h3,
+.text-container p,
+.text-container button {
+  margin: 10px 0;
+}
+
+.text-container h2 {
+  font-size: 16px;
+}
+
+.text-container h3 {
+  font-weight: 600;
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+.text-container button {
+  padding: 15px 30px;
+  border: none;
+  background-color: #408ec6;
+  color: white;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.text-container button:hover {
+  background-color: #7a2048;
+}

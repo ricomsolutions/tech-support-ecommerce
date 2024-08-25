@@ -1,0 +1,61 @@
+.core-values-section {
+  padding: 50px;
+  background-color: #f5f9fc;
+  text-align: center;
+}
+
+.core-values-section h2 {
+  font-size: 2.5rem;
+  color: #007fbf;
+  margin-bottom: 40px;
+}
+
+.values-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.value-card {
+  width: 30%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.value-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.value-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.value-card p {
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+
+.apply-button-container {
+  text-align: center;
+}
+
+.apply-button {
+  background-color: #1e2761;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.apply-button:hover {
+  background-color: #008f79;
+}

@@ -1,0 +1,33 @@
+.qualifications-section {
+  padding: 50px;
+  background-color: #f7f8fa;
+  text-align: left;
+}
+
+.qualifications-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.qualifications-list {
+  list-style: none;
+  padding: 0;
+}
+
+.qualifications-list li {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.check-icon {
+  color: #00c1a5;
+  margin-right: 10px;
+  font-size: 1.3rem;
+}

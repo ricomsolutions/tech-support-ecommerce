@@ -1,0 +1,143 @@
+/* ApplyPage.css */
+.apply-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.apply-heading {
+  font-size: 36px;
+  color: #1a202c;
+  margin-bottom: 20px;
+}
+
+.apply-description {
+  font-size: 18px;
+  color: #4a5568;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.apply-description a {
+  color: #3182ce;
+  text-decoration: none;
+}
+
+.apply-description a:hover {
+  text-decoration: underline;
+}
+
+.apply-button {
+  background-color: #2d3748;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 20px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.apply-button:hover {
+  background-color: #1a202c;
+}
+
+/* ApplyPage.css */
+.apply-form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.apply-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.apply-form label {
+  font-size: 14px;
+  color: #1a202c;
+  margin-bottom: 8px;
+}
+
+.apply-form input,
+.apply-form select {
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+}
+
+.apply-form input:focus,
+.apply-form select:focus {
+  border-color: #3182ce;
+  outline: none;
+}
+
+.apply-form .form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.apply-form .form-check input {
+  margin-right: 10px;
+}
+
+.apply-form .form-check label {
+  font-size: 12px;
+  color: #4a5568;
+}
+
+.apply-form .continue-button {
+  background-color: #2d3748;
+  color: #ffffff;
+  padding: 12px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.apply-form .continue-button:hover {
+  background-color: #1a202c;
+}
+
+.apply-section {
+  margin-top: 30px;
+}
+
+.apply-section h2 {
+  font-size: 28px;
+  color: #1a202c;
+  margin-bottom: 15px;
+}
+
+.apply-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.apply-section li {
+  font-size: 16px;
+  color: #4a5568;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.apply-section li::before {
+  content: "• ";
+  color: #2d3748;
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+}

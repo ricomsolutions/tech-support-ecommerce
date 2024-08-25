@@ -1,0 +1,65 @@
+.technician-testimonials-section {
+  padding: 50px;
+  background-color: #0f2942;
+  color: #fff;
+  text-align: center;
+}
+
+.technician-testimonials-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.technician-testimonials-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.technician-testimonial {
+  width: 45%;
+  background-color: #0b2236;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.stars {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.star-icon {
+  color: #ffc107;
+  margin-right: 5px;
+}
+
+.technician-testimonial-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.technician-testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.author-info h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #00c1a5;
+}
+
+.author-info p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+  color: #9abbd9;
+}

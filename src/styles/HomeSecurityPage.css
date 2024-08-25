@@ -1,0 +1,66 @@
+/* HomeSecurityPage.css */
+.home-security-page {
+  text-align: center;
+}
+
+.security-hero-section {
+  padding: 20px;
+  margin-top: 95px;
+  background-color: #f5f5f5;
+}
+
+.security-hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.security-hero-text {
+  flex: 1;
+  text-align: left;
+  padding: 20px;
+}
+
+.security-hero-text h1 {
+  font-size: 42px;
+}
+
+.security-hero-image {
+  flex: 1;
+  max-width: 50%;
+  height: 50vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.security-services-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 100px;
+  margin-top: 10px;
+}
+
+.security-service-card {
+  cursor: pointer;
+  width: 30%;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.security-service-card:hover {
+  transform: translateY(-5px);
+}
+
+.security-service-icon {
+  font-size: 2.5rem;
+  color: #007bff; /* Icon color */
+  margin-bottom: 10px;
+}

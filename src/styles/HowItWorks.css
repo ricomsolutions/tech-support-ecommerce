@@ -1,0 +1,52 @@
+.how-it-works-section {
+  text-align: center;
+  padding: 50px;
+}
+
+.how-it-works-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.how-it-works-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  max-width: 40%;
+  margin-right: 40px;
+}
+
+.text-content {
+  max-width: 40%;
+  text-align: left;
+}
+
+.text-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.get-started-button {
+  background-color: #00c1a5;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.arrow-icon {
+  color: #00c1a5;
+  font-size: 1.5rem;
+  margin-left: 20px;
+}

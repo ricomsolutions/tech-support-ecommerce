@@ -1,0 +1,36 @@
+/* src/styles/Brands.css */
+.brands {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+.brands h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #1e2761;
+}
+
+.brands-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.brand-item {
+  width: 150px;
+  margin: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.brand-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}

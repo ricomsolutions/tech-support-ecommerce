@@ -1,0 +1,47 @@
+.get-started-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: #f5f9fc;
+}
+
+.content {
+  max-width: 50%;
+}
+
+.ready-text {
+  font-size: 1.2rem;
+  color: #00c1a5;
+  margin-bottom: 10px;
+}
+
+.get-started-section h2 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.start-application-button {
+  background-color: #00c1a5;
+  color: #fff;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.start-application-button:hover {
+  background-color: #008f79;
+}
+
+.image-container {
+  max-width: 45%;
+}
+
+.get-started-image {
+  width: 100%;
+  object-fit: contain;
+}

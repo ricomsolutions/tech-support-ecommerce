@@ -1,0 +1,26 @@
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-input {
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}

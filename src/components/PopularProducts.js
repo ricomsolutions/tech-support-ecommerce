@@ -19,7 +19,7 @@ const popularProducts = [
   {
     id: 3,
     image: require("../images/vr_headset_on_a_white_background_color.png"),
-    name: "VR Headset",
+    name: "Virtual Reality Headset",
     category: "vrHeadsets", // Use a category identifier
   },
   {
@@ -47,7 +47,7 @@ const PopularProducts = () => {
               to={`/booking/${product.category}`}
               className="buy-now-button"
             >
-              Book Now
+              Buy Now
             </Link>
           </div>
         ))}

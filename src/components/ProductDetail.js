@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useCart } from "../context/CartContext";
-import laptopProducts from "../components/laptopProducts";
-import securityCameraProducts from "../components/securityCameraProducts";
+import laptopProducts from "./laptopProducts";
+import securityCameraProducts from "./securityCameraProducts";
 import vrHeadsetProducts from "../components/vrHeadsetProducts";
 import smartphoneProducts from "../components/smartphoneProducts";
 import "../styles/ProductDetail.css";
@@ -27,31 +27,31 @@ const ProductDetail = () => {
     addToCart({
       id: product.id,
       name: product.name,
-      price: product.price,
+      price: parseFloat(product.price), // Ensure price is a number
       image: product.image,
       specs: product.specs,
       description: product.description,
     });
-    setMessage(`"${product.name}" has been added to the cart.`);
-    setTimeout(() => setMessage(""), 3000); // Clear message after 3 seconds
+    setMessage(`${product.name} has been added to the cart.`);
+    setTimeout(() => setMessage(""), 2000); // Clear message after 2 seconds
   };
 
   return (
-    <section className="product-detail">
+    <section className="products-detail">
       <h2>{category.charAt(0).toUpperCase() + category.slice(1)} Products</h2>
       {message && <p className="success-message">{message}</p>}
       <div className="products-grid">
         {products.map((product) => (
-          <div key={product.id} className="product-card">
+          <div key={product.id} className="products-card">
             <img
               src={product.image}
               alt={product.name}
-              className="product-image"
+              className="products-image"
             />
-            <h3 className="product-name">{product.name}</h3>
-            <p className="product-specs">{product.specs}</p>
-            <p className="product-description">{product.description}</p>
-            <h4 className="product-price">{product.price}</h4>
+            <h3 className="products-name">{product.name}</h3>
+            <p className="products-specs">{product.specs}</p>
+            <p className="products-description">{product.description}</p>
+            <h4 className="products-price">₵{product.price.toFixed(2)}</h4>
             <button
               onClick={() => handleAddToCart(product)}
               className="add-to-cart-button"

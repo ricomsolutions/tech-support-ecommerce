@@ -41,7 +41,6 @@ function Login() {
 
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
-
         alert("Login successful!");
         navigate("/"); // Redirect to the home page after login
       }
@@ -65,6 +64,7 @@ function Login() {
       />
       <div className="login-container">
         <h2>Login</h2>
+        {errors.email && <p className="error">{errors.email}</p>}
         <form onSubmit={handleSubmit}>
           <input
             type="email"
@@ -72,9 +72,8 @@ function Login() {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            required
           />
-          {errors.email && <p className="error">{errors.email}</p>}
+
           <div className="password-field">
             <input
               type={passwordVisible ? "text" : "password"}
@@ -82,7 +81,6 @@ function Login() {
               placeholder="Password"
               value={formData.password}
               onChange={handleChange}
-              required
             />
             <FontAwesomeIcon
               icon={passwordVisible ? faEyeSlash : faEye}
@@ -93,9 +91,6 @@ function Login() {
           {errors.password && <p className="error">{errors.password}</p>}
 
           <button type="submit">Login</button>
-          <div className="forgotPassword">
-            <Link to="/forgotpassword">Forgot Password</Link>
-          </div>
         </form>
         <p>
           Create new account? <Link to="/signup">Signup</Link>

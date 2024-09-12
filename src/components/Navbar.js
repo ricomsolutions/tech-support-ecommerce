@@ -1,45 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
   faUser,
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link, useLocation } from "react-router-dom";
-import { useCart } from "../context/CartContext"; // Import the useCart hook
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 import "../styles/Navbar.css";
 
 function Navbar() {
   const [searchVisible, setSearchVisible] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Track user login status
   const location = useLocation();
-  const { cartItems } = useCart(); // Use cart context
-
-  useEffect(() => {
-    // Check if user is logged in by checking for a token in localStorage
-    const token = localStorage.getItem("token");
-    setIsAuthenticated(!!token); // Convert token to boolean
-  }, []);
+  const navigate = useNavigate();
+  const { cartItems } = useCart();
 
   const toggleSearch = () => {
     setSearchVisible(!searchVisible);
   };
 
+  // Check if the user is logged in by looking for a token in localStorage
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true); // User is logged in
+    } else {
+      setIsAuthenticated(false); // User is not logged in
+    }
+  }, []);
+
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("token"); // Remove the token on logout
     setIsAuthenticated(false);
+    navigate("/");
   };
 
-  const applyBackgroundColor =
-    location.pathname === "/about" ||
-    location.pathname === "/contact" ||
-    location.pathname === "/services" ||
-    location.pathname === "/services/wifi-networks" ||
-    location.pathname === "/services/home-security" ||
-    location.pathname === "/services/computers-printers";
-
   return (
-    <nav className={`navbar ${applyBackgroundColor ? "bg-colored" : ""}`}>
+    <nav
+      className={`navbar ${
+        location.pathname === "/about" ||
+        location.pathname === "/contact" ||
+        location.pathname === "/services" ||
+        location.pathname === "/services/wifi-networks" ||
+        location.pathname === "/services/home-security" ||
+        location.pathname === "/services/computers-printers"
+          ? "bg-colored"
+          : ""
+      }`}
+    >
       <div className="logo">
         <a href="/">Ricom Solutions</a>
       </div>
@@ -75,10 +84,11 @@ function Navbar() {
           <input type="text" className="search-input" placeholder="Search..." />
         )}
         <Link to="/cart">
-          <FontAwesomeIcon className="shopping-cart" icon={faCartShopping} />
-          <span className="cart-count">{cartItems.length}</span>
+          <div className="cart-icon">
+            <FontAwesomeIcon className="shopping-cart" icon={faCartShopping} />
+            <span className="cart-count">{cartItems.length}</span>
+          </div>
         </Link>
-
         <div className="account-icon">
           <FontAwesomeIcon icon={faUser} />
           <div className="dropdown-content">
@@ -86,9 +96,9 @@ function Navbar() {
               <>
                 <Link to="/profile">My Profile</Link>
                 <Link to="/settings">Settings</Link>
-                <Link to="/" onClick={handleLogout}>
+                <a href="/login" onClick={handleLogout}>
                   Logout
-                </Link>
+                </a>
               </>
             ) : (
               <>

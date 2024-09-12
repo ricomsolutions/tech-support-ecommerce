@@ -1,4 +1,4 @@
-// src/data/laptopProducts.js
+// src/components/laptopProducts.js
 const laptopProducts = [
   {
     id: 1,
@@ -6,7 +6,7 @@ const laptopProducts = [
     specs: "16GB RAM, 1TB SSD, RTX 3070",
     description: "High-performance laptop suitable for gaming and heavy tasks.",
     image: require("../images/gaming_laptop.png"),
-    price: "$1,299.99",
+    price: 1299.99, // Store the price as a number
   },
   {
     id: 2,
@@ -14,7 +14,7 @@ const laptopProducts = [
     specs: "8GB RAM, 512GB SSD, Intel i7",
     description: "Reliable and efficient laptop for business professionals.",
     image: require("../images/bussiness_laptop.png"),
-    price: "$999.99",
+    price: 999.99, // Store the price as a number
   },
   {
     id: 3,
@@ -22,7 +22,7 @@ const laptopProducts = [
     specs: "8GB RAM, 256GB SSD, Intel i5",
     description: "Lightweight and portable, perfect for everyday use.",
     image: require("../images/ultrabook.jpg"),
-    price: "$799.99",
+    price: 799.99, // Store the price as a number
   },
 ];
 

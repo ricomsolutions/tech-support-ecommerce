@@ -36,8 +36,36 @@ function Signup() {
     // Reset errors
     setErrors({});
 
+    // Validate first and last name fields
+    if (!firstName) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        firstName: "First name is required",
+      }));
+      return;
+    }
+
+    if (!lastName) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        lastName: "Last name is required",
+      }));
+      return;
+    }
+
+    if (!email) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        email: "Email is required",
+      }));
+      return;
+    }
+
     if (password !== confirmPassword) {
-      setErrors({ confirmPassword: "Passwords do not match!" });
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        confirmPassword: "Passwords do not match!",
+      }));
       return;
     }
 
@@ -54,9 +82,8 @@ function Signup() {
         navigate("/");
       }
     } catch (err) {
-      // Handle error response from the backend
       if (err.response && err.response.data) {
-        const backendErrors = err.response.data.errors || {}; // Use empty object if errors is undefined
+        const backendErrors = err.response.data.errors || {};
         setErrors(backendErrors);
       } else {
         alert("Error registering user");
@@ -75,32 +102,40 @@ function Signup() {
         <h2>Register</h2>
         <form onSubmit={handleSubmit}>
           <div className="name-fields">
-            <input
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              value={formData.firstName}
-              onChange={handleChange}
-            />
-            {errors.firstName && <p className="error">{errors.firstName}</p>}
-            <input
-              type="text"
-              name="lastName"
-              placeholder="Last Name"
-              value={formData.lastName}
-              onChange={handleChange}
-            />
-            {errors.lastName && <p className="error">{errors.lastName}</p>}
+            <div className="input-container">
+              <input
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                value={formData.firstName}
+                onChange={handleChange}
+              />
+              {errors.firstName && <p className="error">{errors.firstName}</p>}
+            </div>
+            <div className="input-container">
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                value={formData.lastName}
+                onChange={handleChange}
+              />
+              {errors.lastName && <p className="error">{errors.lastName}</p>}
+            </div>
           </div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          {errors.email && <p className="error">{errors.email}</p>}
-          <div className="password-field">
+
+          <div className="input-container">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            {errors.email && <p className="error">{errors.email}</p>}
+          </div>
+
+          <div className="input-container password-field">
             <input
               type={passwordVisible ? "text" : "password"}
               name="password"
@@ -115,7 +150,8 @@ function Signup() {
             />
           </div>
           {errors.password && <p className="error">{errors.password}</p>}
-          <div className="password-field">
+
+          <div className="input-container password-field">
             <input
               type={passwordVisible ? "text" : "password"}
               name="confirmPassword"

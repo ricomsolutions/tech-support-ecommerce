@@ -1,16 +1,23 @@
 // src/pages/Cart.js
 import React from "react";
-import "../styles/Cart.css";
 import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import "../styles/Cart.css";
 
 function Cart() {
   const { cartItems, removeFromCart, clearCart } = useCart();
+  const navigate = useNavigate(); // Initialize navigate
+
+  const handleOrderClick = (item) => {
+    // Redirect to Checkout page with the selected item's details
+    navigate("/checkout", { state: { selectedItem: item } });
+  };
 
   return (
     <div className="cart-page">
-      <h2>Shopping Cart</h2>
+      <h2 className="cart-page-head">Shopping Cart</h2>
       {cartItems.length === 0 ? (
-        <p className="text">Your cart is empty.</p>
+        <p className="cart-page-text">Your cart is empty.</p>
       ) : (
         <div className="cart-items-container">
           {cartItems.map((item, index) => (
@@ -24,12 +31,18 @@ function Cart() {
                 <h3 className="cart-item-name">{item.name}</h3>
                 <p className="cart-item-specs">{item.specs}</p>
                 <p className="cart-item-description">{item.description}</p>
-                <h4 className="cart-item-price">{item.price}</h4>
+                <h4 className="cart-item-price">₵{item.price}</h4>
                 <button
                   onClick={() => removeFromCart(item.id)}
                   className="remove-button"
                 >
                   Remove
+                </button>
+                <button
+                  onClick={() => handleOrderClick(item)} // Navigate to Checkout page
+                  className="proceed-button"
+                >
+                  Order Item
                 </button>
               </div>
             </div>

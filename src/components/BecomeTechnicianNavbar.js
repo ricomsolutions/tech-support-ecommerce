@@ -1,12 +1,16 @@
-import React from "react";
-import "../styles/BecomeTechnicianNavbar.css";
+import React, { useState } from 'react';
+import '../styles/BecomeTechnicianNavbar.css';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useGoBack } from './utils';
 
 const BecomeTechnicianNavbar = () => {
+  const goBack = useGoBack('/');
+
   return (
     <nav className="technician-navbar">
       <div className="technician-navbar-brand">
-        {/* <img src={image} alt="Ricom Tech Support Logo" className="logo" /> */}
-        <a href="/">Ricom Solution</a>
+        <FontAwesomeIcon onClick={goBack} icon={faArrowLeft} className="back-icon" />
       </div>
       <ul className="technician-navbar-links">
         <li>

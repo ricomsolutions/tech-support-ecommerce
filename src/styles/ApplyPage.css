@@ -3,13 +3,14 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .apply-heading {
   font-size: 36px;
   color: #1a202c;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .apply-description {
@@ -135,7 +136,7 @@
 }
 
 .apply-section li::before {
-  content: "• ";
+  content: '• ';
   color: #2d3748;
   font-size: 20px;
   vertical-align: middle;

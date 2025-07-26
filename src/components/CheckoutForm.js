@@ -1,8 +1,8 @@
 // src/components/CheckoutForm.js
-import React, { useState } from "react";
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import "../styles/CheckoutForm.css";
-import axios from "axios";
+import React, { useState } from 'react';
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import '../styles/CheckoutForm.css';
+import axios from 'axios';
 
 const CheckoutForm = ({ selectedItem }) => {
   const stripe = useStripe();
@@ -18,7 +18,7 @@ const CheckoutForm = ({ selectedItem }) => {
 
     try {
       const { paymentMethod, error } = await stripe.createPaymentMethod({
-        type: "card",
+        type: 'card',
         card: cardElement,
       });
 
@@ -28,16 +28,18 @@ const CheckoutForm = ({ selectedItem }) => {
         return;
       }
 
-      await axios.post("http://localhost:5000/api/orders/create", {
+      const randomUserId = Math.random();
+
+      await axios.post('http://localhost:5000/api/orders/create', {
         cartItems: [selectedItem],
         totalAmount: selectedItem.price,
-        userId: "currentUserId", // Replace with actual user ID
-        paymentMethod: paymentMethod.id,
+        userId: randomUserId,
+        paymentMethod: paymentMethod.type,
       });
 
       setIsLoading(false);
     } catch (error) {
-      setError("Order creation failed. Please try again.");
+      setError('Order creation failed. Please try again.');
       setIsLoading(false);
     }
   };
@@ -49,7 +51,7 @@ const CheckoutForm = ({ selectedItem }) => {
       </div>
       {error && <div className="error-message">{error}</div>}
       <button type="submit" className="submit-button" disabled={isLoading}>
-        {isLoading ? "Processing..." : "Pay Now"}
+        {isLoading ? 'Processing...' : 'Pay Now'}
       </button>
     </form>
   );
